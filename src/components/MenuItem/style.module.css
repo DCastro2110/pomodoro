@@ -7,4 +7,9 @@
   align-items: center;
   border-radius: 4px;
   color: #fff;
+  transition: background-color ease-in-out 300ms;
+}
+
+.card:hover {
+  background-color: rgb(3, 105, 93);
 }

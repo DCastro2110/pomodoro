@@ -6,9 +6,10 @@ import style from "./style.module.css";
 interface IMenuItem {
   children: ReactElement<SvgIconProps>;
   title: string;
+  link: string;
 }
 
-export function MenuItem({ children, title }: IMenuItem) {
+export function MenuItem({ children, title, link }: IMenuItem) {
   const IconChildren: ReactElement<SvgIconProps> = React.cloneElement(
     children,
     {
@@ -16,11 +17,12 @@ export function MenuItem({ children, title }: IMenuItem) {
     },
   );
   return (
-    <div
+    <a
       className={style.card}
       title={title}
+      href={link}
     >
       {IconChildren}
-    </div>
+    </a>
   );
 }
