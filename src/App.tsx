@@ -1,3 +1,4 @@
+import "./style/theme.css";
 import "./style/global.css";
 
 import { Header } from "./components/Header/App";
