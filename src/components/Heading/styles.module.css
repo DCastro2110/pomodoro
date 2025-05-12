@@ -1,6 +1,10 @@
 .heading {
-  font-size: 4rem;
+  font-size: 3.6rem;
   font-weight: 700;
   text-align: center;
   margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }

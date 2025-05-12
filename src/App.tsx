@@ -4,6 +4,7 @@ import "./style/global.css";
 import { Header } from "./components/Header/";
 import { Menu } from "./components/Menu/";
 import { Heading } from "./components/Heading/";
+import { History } from "@mui/icons-material";
 
 /* 
 JSX e TSX: Arquivo de component react
@@ -18,7 +19,9 @@ export function App() {
         <Header />
         <Menu />
         <main>
-          <Heading title="Texto"></Heading>
+          <Heading title="Texto">
+            <History />
+          </Heading>
         </main>
       </div>
     </div>
