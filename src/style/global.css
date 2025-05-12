@@ -30,11 +30,13 @@ body {
 }
 
 .container {
+  max-width: 98rem;
+  margin: 0 auto;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  max-width: 98rem;
-  background-color: red;
-  margin: 0 auto;
 }
