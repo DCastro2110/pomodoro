@@ -1,4 +1,4 @@
-import { MenuItem } from "../MenuItem/App";
+import { MenuItem } from "../MenuItem";
 import { Home, History, Settings, Sunny } from "@mui/icons-material";
 
 import style from "./style.module.css";
