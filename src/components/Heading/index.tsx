@@ -1,7 +1,7 @@
 import type { SvgIconProps } from "@mui/material";
 import React from "react";
 
-import style from "./style.module.css";
+import style from "./styles.module.css";
 
 interface IHeadingProps {
   title: string;

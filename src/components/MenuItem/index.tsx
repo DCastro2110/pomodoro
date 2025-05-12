@@ -1,7 +1,7 @@
 import { type SvgIconProps } from "@mui/material";
 import React, { type ReactElement } from "react";
 
-import style from "./style.module.css";
+import style from "./styles.module.css";
 
 interface IMenuItemProps {
   children: ReactElement<SvgIconProps>;

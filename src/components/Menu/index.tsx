@@ -1,7 +1,7 @@
 import { MenuItem } from "../MenuItem";
 import { Home, History, Settings, Sunny } from "@mui/icons-material";
 
-import style from "./style.module.css";
+import style from "./styles.module.css";
 
 export function Menu() {
   return (

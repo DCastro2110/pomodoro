@@ -1,6 +1,6 @@
 import { AccessAlarm } from "@mui/icons-material";
 
-import style from "./style.module.css";
+import style from "./styles.module.css";
 
 export function Header() {
   return (
