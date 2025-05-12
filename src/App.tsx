@@ -3,6 +3,7 @@ import "./style/global.css";
 
 import { Header } from "./components/Header/App";
 import { Menu } from "./components/Menu/App";
+import { Heading } from "./components/Heading/App";
 
 /* 
 JSX e TSX: Arquivo de component react
@@ -15,6 +16,9 @@ export function App() {
     <div className="container">
       <Header />
       <Menu />
+      <main>
+        <Heading title="Texto"></Heading>
+      </main>
     </div>
   );
 }
