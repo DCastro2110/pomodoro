@@ -3,22 +3,26 @@ import React, { type ReactElement } from "react";
 
 import style from "./style.module.css";
 
-interface IMenuItem {
+interface IMenuItemProps {
   children: ReactElement<SvgIconProps>;
   title: string;
   link: string;
 }
 
-export function MenuItem({ children, title, link }: IMenuItem) {
+// React.ReactNode: Tipo que abrange tudo
+
+export function MenuItem({ children, title, link }: IMenuItemProps) {
   const IconChildren: ReactElement<SvgIconProps> = React.cloneElement(
     children,
     {
-      fontSize: "medium",
+      fontSize: "large",
     },
   );
+
+  const isActivate = true;
   return (
     <a
-      className={style.card}
+      className={`${style.card} ${isActivate ? style.cardActivate : style.card}`}
       title={title}
       href={link}
     >

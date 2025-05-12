@@ -1,15 +1,19 @@
 .card {
-  width: 40px;
-  height: 40px;
-  background-color: rgb(0, 128, 113);
+  width: 5.2rem;
+  height: 5.2rem;
+  background-color: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
+  border-radius: 0.6rem;
   color: #fff;
   transition: background-color ease-in-out 300ms;
 }
 
+.cardActivate {
+  background-color: var(--primary-color);
+}
+
 .card:hover {
-  background-color: rgb(3, 105, 93);
+  background-color: var(--primary-color-hover);
 }
