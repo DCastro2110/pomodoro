@@ -1,4 +1,4 @@
-import React, { useRef, type ReactElement } from "react";
+import React, { useState, type ReactElement } from "react";
 
 interface IState {
   counter: number;
@@ -28,12 +28,12 @@ interface IState {
   };
 }
 
-interface ITimerContext {
+export interface ITimerContext {
   state: IState;
   dispatch: React.Dispatch<IState>;
 }
 
-interface ITimerContextProvider {
+interface ITimerProvider {
   children: ReactElement;
 }
 
@@ -41,9 +41,8 @@ export const TimerContext = React.createContext<ITimerContext | undefined>(
   undefined,
 );
 
-export const TimerContextProvider = ({ children }: ITimerContextProvider) => {
-  const initialValue = useRef<ITimerContext>({
-    state: {
+export const TimerProvider = ({ children }: ITimerProvider) => {
+  const [timerConfig, setTimerConfig] = useState({
       counter: 1,
       work: {
         time: {
@@ -69,9 +68,7 @@ export const TimerContextProvider = ({ children }: ITimerContextProvider) => {
         phrase: "Nesse ciclo descanse por 15 minutos!",
         color: "",
       },
-    },
-    dispatch: () => {},
-  });
+    })
 
-  return <TimerContext.Provider value={initialValue.current}>{children}</TimerContext.Provider>;
+  return <TimerContext.Provider value={{state: timerConfig, dispatch: setTimerConfig}}>{children}</TimerContext.Provider>;
 };
