@@ -40,3 +40,15 @@ body {
   align-items: center;
   gap: 24px;
 }
+
+.categoryText {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 52%;
+  }
+}
