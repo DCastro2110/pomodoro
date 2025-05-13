@@ -1,10 +1,14 @@
 import "./style/theme.css";
 import "./style/global.css";
 
+import { Outlet } from "react-router";
+
 import { Header } from "./components/Header/";
 import { Menu } from "./components/Menu/";
-import { Heading } from "./components/Heading/";
-import { History } from "@mui/icons-material";
+import { TimerProvider } from "./contexts/TimerContext";
+
+
+// import { Button } from "./components/Button";
 
 /* 
 JSX e TSX: Arquivo de component react
@@ -14,16 +18,14 @@ Retorno: O que será exibido na página
 */
 export function App() {
   return (
-    <div className="container">
-      <div className="content">
-        <Header />
-        <Menu />
-        <main>
-          <Heading title="Texto">
-            <History />
-          </Heading>
-        </main>
+    <TimerProvider>
+      <div className="container">
+        <div className="content">
+          <Header />
+          <Menu />
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </TimerProvider>
   );
 }
