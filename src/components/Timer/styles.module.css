@@ -1,0 +1,10 @@
+.time {
+  font-size: 16rem;
+  text-align: center;
+}
+
+.timeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
