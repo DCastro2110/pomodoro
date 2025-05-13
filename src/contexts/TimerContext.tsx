@@ -1,39 +1,77 @@
-import { createContext, useState, type ReactElement } from "react";
+import React, { useRef, type ReactElement } from "react";
 
-interface ITimerProviderProps {
-  children: ReactElement;
-}
-
-export interface IState {
-  minutes: number;
-  seconds: number;
+interface IState {
+  counter: number;
+  work: {
+    time: {
+      minutes: number;
+      seconds: number;
+    };
+    phrase: string; // "Nesse ciclo foque por 25 minutos!"
+    color: string;
+  };
+  short: {
+    time: {
+      minutes: number;
+      seconds: number;
+    };
+    phrase: string; // "Nesse ciclo foque por 25 minutos!"
+    color: string;
+  };
+  long: {
+    time: {
+      minutes: number;
+      seconds: number;
+    };
+    phrase: string; // "Nesse ciclo foque por 25 minutos!"
+    color: string;
+  };
 }
 
 interface ITimerContext {
   state: IState;
-  dispatch: React.Dispatch<{
-    minutes: number;
-    seconds: number;
-  }>;
+  dispatch: React.Dispatch<IState>;
 }
 
-export const TimerContext = createContext<ITimerContext>({
-  state: {
-    minutes: 0,
-    seconds: 0,
-  },
-  dispatch: () => undefined,
-});
+interface ITimerContextProvider {
+  children: ReactElement;
+}
 
-export const TimerProvider = ({ children }: ITimerProviderProps) => {
-  const [time, setTime] = useState({
-    seconds: 10,
-    minutes: 0,
+export const TimerContext = React.createContext<ITimerContext | undefined>(
+  undefined,
+);
+
+export const TimerContextProvider = ({ children }: ITimerContextProvider) => {
+  const initialValue = useRef<ITimerContext>({
+    state: {
+      counter: 1,
+      work: {
+        time: {
+          minutes: 25,
+          seconds: 0,
+        },
+        phrase: "Nesse ciclo foque por 25 minutos!",
+        color: "",
+      },
+      short: {
+        time: {
+          minutes: 5,
+          seconds: 0,
+        },
+        phrase: "Descanse por 5 minutos!",
+        color: "",
+      },
+      long: {
+        time: {
+          minutes: 15,
+          seconds: 0,
+        },
+        phrase: "Nesse ciclo descanse por 15 minutos!",
+        color: "",
+      },
+    },
+    dispatch: () => {},
   });
 
-  return (
-    <TimerContext.Provider value={{ state: time, dispatch: setTime }}>
-      {children}
-    </TimerContext.Provider>
-  );
+  return <TimerContext.Provider value={initialValue.current}>{children}</TimerContext.Provider>;
 };
